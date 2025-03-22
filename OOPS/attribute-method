@@ -1,1 +1,18 @@
-
+class Dog{
+    String name;
+    int age;
+    String bread;
+    public void eat(){
+        System.out.println(name + " eat");
+    }
+}
+public class Attribute_Method {
+    public static void main(String[] args){
+        Dog dog = new Dog();
+        dog.name = "Bruno";
+        dog.eat();
+        dog.age = 10;
+        System.out.println(dog.age);
+    }
+    
+}
