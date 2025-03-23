@@ -1,0 +1,29 @@
+class parentClass{
+    String father;
+    public void display(){
+        System.out.println("parent class method");
+    }
+}
+class childClass extends parentClass{
+    String child;
+    public void show(){
+        System.out.println("child class method");
+    }
+}
+public class inheritens {
+    public static void main(String[] args){
+        childClass child1 = new childClass();
+        child1.display();
+        child1.father = "Omkar Singh";
+        System.out.println(child1.father);
+        System.out.println();
+        child1.show();
+        child1.child = "Vikas";
+        childClass child2 = new childClass();
+        System.out.println(child1.child);
+        child2.child = "Ananya";
+        System.out.println(child1.child + " Wife " +child2.child);
+
+    }
+    
+}
