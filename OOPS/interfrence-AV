@@ -1,0 +1,23 @@
+ interface Car {
+    public void start();
+}
+
+class ElectricCar implements Car{
+    public void start(){
+        System.out.println("Electric Car Start");
+    }
+}
+
+class DieselCar implements Car{
+    public void start(){
+        System.out.println("Deisel car start");
+    }
+}
+public class interfrence {
+    public static void main(String[] args){
+        Car rangeRover = new ElectricCar();
+        Car thar = new DieselCar();
+        rangeRover.start();
+        thar.start();
+    }
+}
