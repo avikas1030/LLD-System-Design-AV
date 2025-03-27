@@ -1,0 +1,70 @@
+1. To invoke variable of parent class
+code - 
+
+class Animal{
+    String color = "Animal color is White";
+}
+class Dog extends Animal{
+    String color = "Dog color is Black";
+    void printcolor(){
+        System.out.println(color);   // Dog color is Black - output
+        System.out.println(super.color);  // Animal color is White - output
+    }
+}
+public class superKeyword {
+    public static void main(String[] args){
+        Dog obj = new Dog();
+        obj.printcolor();
+    }
+}
+
+2. To invoke methods of parent class
+code - 
+
+class Animal{
+    void eat(){
+        System.out.println("Animal eating....");
+    }
+}
+class Dog extends Animal{
+    void eat(){
+        System.out.println("Dog eating bread....");
+    }
+    void bark(){
+        System.out.println("Dog is barking.....");
+    }
+    void work(){
+        eat();
+        System.out.println();
+        super.eat();
+        System.out.println();
+        bark();
+    }
+}
+public class superKeyword {
+    public static void main(String[] args){
+        Dog obj = new Dog();
+        obj.work();
+    }
+}
+
+3. To invoke parent class constructo
+code - 
+
+class Animal{
+    Animal(){
+        System.out.println("Animal is created");
+    }
+}
+class Dog extends Animal{
+    Dog(){
+        super();
+        System.out.println("Dog is created");
+    }
+}
+public class superKeyword {
+    public static void main(String[] args){
+        Dog obj = new Dog();
+        
+    }
+}
