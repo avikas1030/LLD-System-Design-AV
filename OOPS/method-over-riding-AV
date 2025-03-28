@@ -1,0 +1,25 @@
+class Bank{
+    public void rateOfInterest(){
+        System.out.println("generally rate of interest is 5%");
+    }
+}
+class PNB extends Bank{
+    public void rateOfInterest(){
+        System.out.println("pnb rate of interest is 6.5%");
+    }
+}
+class SBI extends Bank{
+    public void rateOfInterest(){
+        System.out.println("sbi rate of interest is 7.5%");
+    }
+}
+public class methodOverRidding {
+    public static void main(String[] args){
+        Bank obj1 = new Bank();
+        PNB obj2 = new PNB();
+        SBI obj3 = new SBI();
+        obj1.rateOfInterest();
+        obj2.rateOfInterest();
+        obj3.rateOfInterest();
+    }
+}
