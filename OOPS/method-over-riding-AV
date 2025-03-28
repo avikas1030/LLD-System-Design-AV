@@ -4,11 +4,13 @@ class Bank{
     }
 }
 class PNB extends Bank{
+    @Override
     public void rateOfInterest(){
         System.out.println("pnb rate of interest is 6.5%");
     }
 }
 class SBI extends Bank{
+    @Override
     public void rateOfInterest(){
         System.out.println("sbi rate of interest is 7.5%");
     }
