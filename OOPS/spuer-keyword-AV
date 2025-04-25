@@ -48,7 +48,7 @@ public class superKeyword {
     }
 }
 
-3. To invoke parent class constructo
+3. To invoke parent class constructor
 code - 
 
 class Animal{
