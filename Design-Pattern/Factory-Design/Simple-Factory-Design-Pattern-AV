@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Burger{
+    public:
+    virtual void prepair() = 0;
+    virtual ~Burger(){};
+};
+class BasicBurger : public Burger{
+    void prepair() override{
+        cout<< "Preparing Basic Burger with bun, patty, and ketchup!" << endl;
+    }
+};  
+class StandardBurger : public Burger{
+    void prepair() override{
+        cout<<"Preparing Standard Burger with bun, patty, cheese, and lettuce!" << endl;
+    }
+};
+class PremiumBurger : public Burger{
+    void prepair() override{
+        cout<< "Preparing Premium Burger with gourmet bun, premium patty, cheese, lettuce, and secret sauce!" << endl;
+    }
+};
+class Burgerfactory{
+    public:
+    Burger* createBurger(string type){
+        if(type=="Basic"){
+            return new BasicBurger();
+        }
+        else if(type=="standard"){
+            return new StandardBurger();
+        }
+        else if(type=="premium"){
+            return new PremiumBurger();
+        }
+        else{
+            cout<<"Invalid type"<<endl;
+            return NULL;
+        }
+    }
+};
+int main(){
+    Burgerfactory* burgerfactoory = new Burgerfactory();
+    Burger* burger = burgerfactoory->createBurger("Basic");
+    burger->prepair();
+    return 0;
+}
