@@ -1,0 +1,67 @@
+// Strategy.java
+public interface Strategy {
+    void execute();
+}
+
+// ConcreteStrategyA.java
+public class ConcreteStrategyA implements Strategy {
+    @Override
+    public void execute() {
+        System.out.println("Executing Strategy A");
+    }
+}
+
+// ConcreteStrategyB.java
+public class ConcreteStrategyB implements Strategy {
+    @Override
+    public void execute() {
+        System.out.println("Executing Strategy B");
+    }
+}
+
+// ConcreteStrategyC.java
+public class ConcreteStrategyC implements Strategy {
+    @Override
+    public void execute() {
+        System.out.println("Executing Strategy C");
+    }
+}
+
+// Context.java
+public class Context {
+
+    private Strategy strategy;
+
+    // Set strategy at runtime
+    public void setStrategy(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
+    // Delegate work to strategy
+    public void execute() {
+        if (strategy == null) {
+            throw new IllegalStateException("Strategy not set");
+        }
+        strategy.execute();
+    }
+}
+
+// Client.java
+public class Client {
+    public static void main(String[] args) {
+
+        Context context = new Context();
+
+        // Use Strategy A
+        context.setStrategy(new ConcreteStrategyA());
+        context.execute();
+
+        // Change strategy at runtime
+        context.setStrategy(new ConcreteStrategyB());
+        context.execute();
+
+        // Change strategy again
+        context.setStrategy(new ConcreteStrategyC());
+        context.execute();
+    }
+}
