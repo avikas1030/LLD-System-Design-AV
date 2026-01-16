@@ -161,3 +161,43 @@ int main() {
 
     return 0;
 }
+
+
+from abc import ABC, abstractmethod
+class Strategy(ABC):
+    @abstractmethod
+    def execute(self):
+        pass
+
+class BasicStrategyA(Strategy):
+    def execute(self):
+        print("BasicStrategyA is execute of StrategyA")
+
+class StandardStrategyA(Strategy):
+    def execute(self):
+        print("StandardStrategyA is execute of StrategyA")
+        
+class PremiumStrategyA(Strategy):
+    def execute(self):
+        print("PremiumStrategyA is execute of StrategyA")
+        
+class BasicStrategyB(Strategy):
+    def execute(self):
+        print("BasicStrategyB is execute of StrategyB")
+        
+class StandardStrategyB(Strategy):
+    def execute(self):
+        print("StandardStrategyB is execute of StrategyB")
+        
+class PremiumStrategyB(Strategy):
+    def execute(self):
+        print("PremiumStrategyB is execute of StrategyB")
+        
+class StrategyFactoryMethod(ABC):
+    @abstractmethod
+    def create_strategy(self, type):
+        pass
+    
+class StrategyA(StrategyFactoryMethod):
+    
+        
